@@ -671,6 +671,9 @@ legend,
 .pt60 {
   padding-top: 6rem;
 }
+.pt85 {
+  padding-top: 8.5rem;
+}
 .pt94 {
   padding-top: 9.4rem !important;
 }
@@ -1708,16 +1711,30 @@ button {
   font-weight: 700;
   padding-bottom: 1.0rem;
 }
-.input-type input {
-  padding: 1.8rem 1.4rem;
-  border: 1px solid #D8E1E8;
-  color: var(--black0e);
-  font-size: 1.4rem;
-  font-weight: 500;
-  border-radius: 1.0rem;
-  width: 100%;
+.input-type {
+  & input {
+    padding: 1.8rem 1.4rem;
+    border: 1px solid #D8E1E8;
+    color: var(--black0e);
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 1.0rem;
+    width: 100%;
+    
+  }
+  & select {
+    position: relative;
+    padding: 1.8rem 1.4rem;
+    border: 1px solid #D8E1E8;
+    color: var(--black0e);
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 1.0rem;
+    width: 100%;
+    background: var(--white) url(../images/ico_arrow_down.svg) no-repeat top 50% right 14px / 24px;
+  }
 }
-.input-type .kg,
+  .input-type .kg,
 .input-type .won {
   position: relative;
 }
@@ -1782,7 +1799,16 @@ button {
     &[type="date"] {
 
       background: url(../images/ico_calendar2.svg) no-repeat right 14px center / 24px;
+      &.bg {
+        background-color: var(--white);
+      }
     }
+  }
+  &.ab-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
 }
 .input-type1 textarea {
@@ -1877,21 +1903,8 @@ button {
 .nav-foot.fix-bottom {
   height: 20.0rem !important;
 }
-.nav-foot .btn-select {
-  display: block;
-  width: 86px;
-  height: 86px;
-  border-radius: 100%;
-  background: var(--blue00) url("../images/ico_car.svg") no-repeat center center;
-  position: fixed;
-  z-index: 301;
-  bottom: 4.1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0 .2004rem 2.3749rem 0 rgba(0, 0, 0, 0.3);
-}
 .nav-foot .btn-select.active {
-  background: var(--white) url("../images/ico_close_foot.svg") no-repeat center center;
+  background: var(--white) url("../images/ico_logo_active.svg") no-repeat center center;
 }
 .nav-foot__layer {
   display: none;
@@ -2183,13 +2196,10 @@ button {
   font-size: 1.6rem;
   font-weight: 700;
   &.gray {
-    color: rgba(0, 0, 0, 0.70) !important;
+    color: #888;
   }
-  &.grayaa {
-    color: #aaa;
-  }
-  &.gray58 {
-    color: #58687F;
+  &.gray2 {
+    color: #8f8f8f;
   }
   &.center {
     text-align: center;
@@ -2717,7 +2727,8 @@ button {
   transform: translateX(-50%);
   bottom: 4.7rem;
   &.bt2 {
-    bottom: 11.7rem;
+    width: 100%;
+    bottom: 0;
   }
 }
 .check-menu-box {
@@ -5142,7 +5153,7 @@ input[type="number"]::-webkit-inner-spin-button {
   width: 86px;
   height: 86px;
   border-radius: 100%;
-  background: #5965AF url(../images/ico_logo.svg) no-repeat center center;
+  background: #5965AF url(../images/ico_logo.svg) no-repeat center center / 30px;
   position: fixed;
   z-index: 301;
   bottom: 4.1rem;
@@ -5207,6 +5218,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .card-main {
   position: relative;
   display: block;
+  min-height: 11.4rem;
   background-color: var(--white);
   border-radius: 10px;
   box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
@@ -5300,9 +5312,6 @@ input[type="number"]::-webkit-inner-spin-button {
     border-radius: 10px;
     box-shadow: 0px 2px 16px 0px rgba(0, 0, 0, 0.10);
   }
-}
-.card-type1 {
-
 }
 
 .dailylog{
@@ -5605,6 +5614,18 @@ input[type="number"]::-webkit-inner-spin-button {
   & img {
     display: block;
     width: 100%;
+    &.w70 {
+      width: 70%;
+    }
+  }
+  &.cover {
+    & img {
+      width: 100%;
+      height: calc(100vh - 80px);
+      object-fit: cover;
+      
+    
+    }
   }
 }
 .background {
@@ -5644,6 +5665,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .input-wrap {
   display: grid;
   grid-template-columns: 1fr 80px;
+  
   & input {
     border-radius: 10px 0 0 10px;
     border-right: 0;
@@ -5651,9 +5673,13 @@ input[type="number"]::-webkit-inner-spin-button {
   & button {
     display: block;
     border-radius: 0 10px 10px 0;
-    color: #58687F !important;
-    background: #ebedf0;
-    border: 1px solid #D8E1E8;
+    color: var(--white);
+    background: #5965AF;
+    /* border: 1px solid #D8E1E8; */
+    &.gray {
+      background: #EBEDF0;
+      border: none;
+    }
   }
 }
 .badge {
